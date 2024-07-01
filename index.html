@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The First Extension</title>
+    <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- icon bootstrap cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- css file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-3" style="width: 300px;">
+        <div class="loopLimit">
+            <div class="field-group">
+                <label for="">ID Element</label>
+                <input type="text" value="btn-click" id="idElement">
+            </div>
+            <div class="field-group">
+                <label for="">Limit Loop</label>
+                <input type="text" value="34" id="limitLoop">
+            </div>
+            <div class="field-group">
+                <label for="">Delay Time</label>
+                <input type="text" value="500" id="delayTime">
+            </div>
+            <div class="action mb-2">
+                <Button class="btn btn-primary" id="btnStart" style="width: fit-content;">Start</Button>
+                <Button class="btn btn-danger" id="btnStop" style="width: fit-content;">Stop</Button>
+            </div>
+        </div>
+        <Button class="btn btn-primary mb-2" id="btnStartInfinityLoop" style="width: fit-content;">Start Infinity Loop</Button>
+        <Button class="btn btn-danger mb-2" id="btnStopInfinityLoop" style="width: fit-content;">Stop Infinity Loop</Button>
+    </div>
+</body>
+<script src="script.js" type="text/javascript"></script>
+</html>
