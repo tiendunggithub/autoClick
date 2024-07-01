@@ -1,0 +1,15 @@
+.toastGetXPath {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px;
+    left: calc(50% - 150px);
+    width: 300px;
+    background-color: #201f1f;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+
+    transition: visibility 0s, opacity 0.5s linear;
+}

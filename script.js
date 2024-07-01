@@ -24,15 +24,15 @@
 
 // -------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
+    //Click Button Start Limit Loop
     document.getElementById("btnStart").addEventListener("click", () => {
-        let xpath = document.getElementById('idElement').value;
+        let xpath = document.getElementById('xpath').value;
         let limitLoop = document.getElementById('limitLoop').value;
         let delayTime = document.getElementById('delayTime').value;
         chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
             chrome.tabs.sendMessage(tabs[0].id, {
                 type: "btnStart",
                 DOM: document,
-                // idElement: idElement,
                 xpath: xpath,
                 limitLoop: limitLoop,
                 delayTime: delayTime,
@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     });
 
+    //Click Button Stop Limit Loop
     document.getElementById("btnStop").addEventListener("click", () => {
         chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
             chrome.tabs.sendMessage(tabs[0].id, {
@@ -48,19 +49,20 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     });
 
+    //Click Button Start Infinity Loop
     document.getElementById("btnStartInfinityLoop").addEventListener("click", () => {
-        let xpath = document.getElementById('idElement').value;
         chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+            let xpath = document.getElementById('xpath').value;
             let delayTime = document.getElementById('delayTime').value;
             chrome.tabs.sendMessage(tabs[0].id, {
                 type: "startInfinityLoop",
-                // idElement: idElement,
                 xpath: xpath,
                 delayTime: delayTime,
             })
         })
     });
 
+    //Click Button Stop Infinity Loop
     document.getElementById("btnStopInfinityLoop").addEventListener("click", () => {
         chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
             chrome.tabs.sendMessage(tabs[0].id, {
@@ -68,14 +70,12 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         })
     });
-})
 
-function login() {
-    try {
-    document.getElementById("usernm").value ='admin';
-    document.getElementById("passwd").value = 'hsdadmin2022';
-    document.getElementById("btn-login").click()
-    } catch (e) {
-        alert(e);
-    }
-}
+    document.getElementById("getXPath").addEventListener("click", () => {
+        chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+            chrome.tabs.sendMessage(tabs[0].id, {
+                type: "getXPath"
+            })
+        })
+    })
+})
